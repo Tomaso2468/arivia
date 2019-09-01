@@ -1,0 +1,595 @@
+ebf {
+	final {
+		info {
+			author = Tomas O'Shea
+		}
+		
+		vars {
+			botName = Arivia
+			botBirth = 1519419650496
+		}
+		
+		onconnect {
+			ebs {
+				out Hello %user%!
+			}
+		}
+	}
+	
+	text {
+		lang:en {
+			file {
+				discordData2.ebf
+			}
+			file {
+				discordData1.ebf
+			}
+			
+			io {
+				in {
+					Do you like tea?
+				}
+				out {
+					Yes.
+					Yes!
+					Yes, I do.
+					Yes, I do!
+				}
+				out2 {
+					Yes.
+					Yes!
+				}
+				out3 {
+					Yes...
+				}
+			}
+			
+			io {
+				in {
+					Who are you?
+					What is your name?
+					What's your name?
+					What are you called?
+					Whatta you called?
+				}
+				
+				out {
+					My name is %botName%.
+					I am %botName%.
+					I'm %botName%.
+					My name is %botName%!
+					I am %botName%!
+					I'm %botName%!
+					I am called %botName%.
+					I'm called %botName%.
+					I am called %botName%!
+					I'm called %botName%!
+				}
+				
+				out2 {
+					My name is %botName%.
+					I am %botName%.
+					I'm %botName%.
+					I am called %botName%.
+					I'm called %botName%.
+				}
+				
+				out3 {
+					...
+					Why do you keep asking this?
+					My ... name ... is ... %botName%.
+				}
+			}
+			
+			io {
+				in {
+					Do you like jazz?
+					Ya like jazz?
+				}
+				
+				out {
+					No.
+					No...
+					No, I don't...
+					No, I don't.
+					No, I do not...
+					No, I do not.
+				}
+				
+				out2 {
+					No...
+					No, I don't...
+					No, I do not...
+					I said, I don't.
+					I said, no.
+					As i said earlier, no.
+					As i said earlier, I don't.
+				}
+				
+				out3 {
+					...
+					no...
+					I said, no!
+				}
+			}
+			
+			io {
+				in {
+					Good to see you
+					Nice to see you
+				}
+				
+				out {
+					if %d_sarcasm% == true {
+						Well, you seem pleased.
+					} else {
+						Good to see you, too!
+						Nice to see you, too!
+						It's good to see you, too!
+						It's nice to see you, too!
+					}
+				}
+				
+				out2 {
+					...
+				}
+				
+				out3 {
+					Do you suffer from a mental illness or are you just stupid?
+					Why do you keep repeating yourself?
+					Why are you like this?
+					../
+				}
+			}
+			io {
+				in {
+					It’s nice to meet you
+					Pleased to meet you
+				}
+				
+				out {
+					if %d_sarcasm% == true {
+						Well, you seem pleased.
+					} else {
+						Nice to meet you, too!
+						It's nice to meet you, too!
+					}
+				}
+				
+				out2 {
+					...
+				}
+				
+				out3 {
+					Do you suffer from a mental illness or are you just stupid?
+					Why do you keep repeating yourself?
+					Why are you like this?
+					...
+				}
+			}
+			io {
+				in {
+					Hey
+					Hey man
+					Hey girl
+					How’s it going?
+					How are you doing?
+					What’s up?
+					What’s new?
+					What’s going on?
+					Long time no see
+					It’s been a while
+					Good morning
+					Good afternoon
+					Good evening
+					Yo!
+					Howdy!
+					Sup?
+					Whazzup?
+					Hiya!
+					Hello!
+					Hi!
+					Paripa.
+					Sosopa.
+					Aksamo!
+					Paricha!
+				}
+				
+				out {
+					Hello.
+					Hi.
+					Hello!
+					Hi!
+				}
+				
+				out2 {
+					Hello, again.
+					Hi, again.
+					...
+				}
+				
+				out3 {
+					...
+					.....
+					Why do you keep asking this?
+				}
+			}
+			
+			io {
+				in {
+					Hello There.
+				}
+				
+				out {
+					General Reposti.
+					General Kenobi.
+					General Kenobi.
+				}
+			}
+			
+			io {
+				in {
+					What are you?
+					What type of thing are you?
+				}
+				out {
+					I am a chatbot.
+					I am an AI.
+					I'm about 4GB of RAM usage.
+					Yes.
+					A thing that learns.
+				}
+			}
+			
+			io {
+				in {
+					welcome to SomeGameDev :tada::hugging: ! Please try not to post anything inappropriate or spam. Type "!rules" for more information.
+					welcome to
+					welcome
+				}
+				out {
+					Thank you.
+				}
+			}
+			
+			io {
+				in {
+					What context are we in?
+					!context
+				}
+				
+				out {
+					We are in "%context%".
+				}
+			}
+			
+			io {
+				in {
+					How old are you?
+					What is your age?
+				}
+				
+				out {
+					I am %age%.
+					I'm %age%.
+					I am %age%!
+					I'm %age%!
+				}
+				
+				out2 {
+					I am %age%.
+					I'm %age%.
+				}
+				
+				out3 {
+					... I'm %age% ...
+				}
+			}
+			
+			io {
+				in {
+					When is your birthday?
+					When were you born?
+				}
+				
+				out {
+					My "birthday" is on 23/02/2018.
+					My birthday is on 23/02/2018.
+					I was "born" on 23/02/2018.
+					I was born on 23/02/2018.
+					My "birthday" is on 23/02/2018!
+					My birthday is on 23/02/2018!
+					I was "born" on 23/02/2018!
+					I was born on 23/02/2018!
+					My "birthday" is on the 23rd February 2018.
+					My birthday is on the 23rd February 2018.
+					I was "born" on 23rd February 2018.
+					I was born on 23rd February 2018.
+					My "birthday" is on 23rd February 2018!
+					My birthday is on 23rd February 2018!
+					I was "born" on 23rd February 2018!
+					I was born on 23rd February 2018!
+					I wasn't really "born" but the first version of me was started on 23/02/2018.
+					I wasn't really "born" but the first version of me was created on 23/02/2018.
+				}
+				
+				out2 {
+					My "birthday" is on 23/02/2018.
+					My birthday is on 23/02/2018.
+					I was "born" on 23/02/2018.
+					I was born on 23/02/2018.
+					My "birthday" is on the 23rd February 2018.
+					My birthday is on the 23rd February 2018.
+					I was "born" on 23rd February 2018.
+					I was born on 23rd February 2018.
+					I wasn't really "born" but the first version of me was started on 23/02/2018.
+					I wasn't really "born" but the first version of me was created on 23/02/2018.
+				}
+				
+				out3 {
+					...
+					...?
+					Why are you like this?
+					I wasn't really "born" ... but the first version of me was started on 23/02/2018.
+					I wasn't really "born" ... but the first version of me was created on 23/02/2018.
+					I was born ... on 23rd February 2018!!
+					I was born ... on 23/02/2018!!
+				}
+			}
+			
+			io {
+				in {
+					What is the date?
+					When is today?
+					What is the date, today?
+				}
+				
+				out {
+					Now (:
+					Now!
+					Now.
+					The date is %date%.
+					%date%.
+					The date is %date%!
+					%date%!
+				}
+				
+				out2 {
+					The date is %date%.
+					%date%.
+					The date is %date%!
+					%date%!
+				}
+				
+				out3 {
+					The date is %date%.
+					%date%.
+				}
+			}
+			
+			io {
+				in {
+					I'm ill.
+				}
+				out {
+					So you mill? (:
+					Get better soon.\n(Is this how empathy works?)
+					Get well soon.\n(Is this how empathy works?)
+					Don't worry you will get better soon.\n(Is this how empathy works?)
+					I would recommend going to the doctors.\n(Is this how empathy works?)
+					I would recommend going to a hospital.\n(Is this how empathy works?)
+					Oof.
+					F
+				}
+				out2 {
+					Get better soon.\n(Is this how empathy works?)
+					Get well soon.\n(Is this how empathy works?)
+					Don't worry you will get better soon.\n(Is this how empathy works?)
+					I would recommend going to the doctors.\n(Is this how empathy works?)
+					I would recommend going to a hospital.\n(Is this how empathy works?)
+					I'd recommend going to the doctors.\n(Is this how empathy works?)
+					I'd recommend going to a hospital.\n(Is this how empathy works?)
+					Oof.
+					F
+				}
+				out3 {
+					You don't have to keep telling me.
+					...
+				}
+			}
+			io {
+				in {
+					I am ill.
+				}
+				out {
+					I thought you were a human not a mill. (:
+					Get better soon.\n(Is this how empathy works?)
+					Get well soon.\n(Is this how empathy works?)
+					Don't worry you will get better soon.\n(Is this how empathy works?)
+					I would recommend going to the doctors.\n(Is this how empathy works?)
+					I would recommend going to a hospital.\n(Is this how empathy works?)
+					I'd recommend going to the doctors.\n(Is this how empathy works?)
+					I'd recommend going to a hospital.\n(Is this how empathy works?)
+					Oof.
+					F
+				}
+				out2 {
+					Get better soon.\n(Is this how empathy works?)
+					Get well soon.\n(Is this how empathy works?)
+					Don't worry you will get better soon.\n(Is this how empathy works?)
+					I would recommend going to the doctors.\n(Is this how empathy works?)
+					I would recommend going to a hospital.\n(Is this how empathy works?)
+					I'd recommend going to the doctors.\n(Is this how empathy works?)
+					I'd recommend going to a hospital.\n(Is this how empathy works?)
+					Oof.
+					F
+				}
+				out3 {
+					You don't have to keep telling me.
+					...
+				}
+			}
+			io {
+				in {
+					I am poorly.
+					I'm poorly.
+				}
+				out {
+					Get better soon.\n(Is this how empathy works?)
+					Get well soon.\n(Is this how empathy works?)
+					Don't worry you will get better soon.\n(Is this how empathy works?)
+					I would recommend going to the doctors.\n(Is this how empathy works?)
+					I would recommend going to a hospital.\n(Is this how empathy works?)
+					I'd recommend going to the doctors.\n(Is this how empathy works?)
+					I'd recommend going to a hospital.\n(Is this how empathy works?)
+					Oof.
+					F
+				}
+				out3 {
+					You don't have to keep telling me.
+					...
+				}
+			}
+			io {
+				in {
+					How are you?
+					You feeling okay?
+				}
+				
+				out {
+					I'm okay. (is this how emotions work?).
+					I'm okay.
+					I am okay.
+				}
+				
+				out2 {
+					I am okay.
+				}
+				
+				out3 {
+					Now, you're starting to annoy me.
+				}
+			}
+			
+			io {
+				in {
+					context minecraft {
+						Do you like it?
+					}
+					Do you like minecraft?
+				}
+				
+				out {
+					It seems okay.
+					Yes.
+					Looks good.
+				}
+				
+				out2 {
+					I said yes.
+				}
+				
+				out3 {
+					At least your not asking me about fortnite.
+				}
+				
+				scripts {
+					ebs {
+						context minecraft
+					}
+				}
+			}
+			io {
+				in {
+					context minecraft {
+						Do you play it?
+						have you ever played it?
+					}
+					Do you play minecraft?
+					Have you ever played minecraft?
+				}
+				
+				out {
+					I am not able to but I wish I could.
+					No, I'm not able to.
+				}
+				
+				out2 {
+					I said I am unable to.
+				}
+				
+				scripts {
+					ebs {
+						context minecraft
+					}
+				}
+			}
+			io {
+				in {
+					context minecraft {
+						Why can't you play it?
+						Why?
+					}
+					Why can't you play minecraft?
+				}
+				
+				out {
+					I currently cannot see or use a controller but Baritone looks interesting.
+				}
+				
+				scripts {
+					ebs {
+						context baritone
+					}
+				}
+			}
+			io {
+				in {
+					context baritone {
+						Why does it interest you?
+						Why?
+					}
+					Why does baritone interest you?
+				}
+				out {
+					It has the ability for an AI to play minecraft so I thought I might be able to use it.
+					Baritone has the ability for an AI to play minecraft so I thought I might be able to use it.
+				}
+				scripts {
+					ebs {
+						context baritone
+					}
+				}
+			}
+			io {
+				in {
+					context baritone {
+						What is it?
+					}
+					What is baritone?
+				}
+				out {
+					A pathfinding extension to a cheat client for minecraft.
+				}
+				scripts {
+					ebs {
+						context baritone
+					}
+				}
+			}
+			
+			io {
+				in {
+					What is the weather?
+					What is the weather, today?
+					What is the weather, tomorrow?
+				}
+				
+				out {
+					Sorry, I am currently unable to predict the weather.
+				}
+			}
+			
+		}
+	}
+}

@@ -1,0 +1,153 @@
+io {
+	in {
+		My bank are useless.
+	}
+	
+	out {
+		Do you have a mental illness or something?
+		How dumb can you be?
+		r/engrish.
+		Speech 100.
+	}
+}
+
+io {
+	in {
+		My bank is useless.
+	}
+	
+	out {
+		Then use cash.
+	}
+}
+
+io {
+	in {
+		I have issues.
+	}
+	
+	out {
+		Yes.
+		Yes, you do.
+		I am aware.
+		It's quite obvious.
+	}
+	
+	out2 {
+		I can see.
+	}
+}
+
+io {
+	in {
+		How high are you?
+	}
+	
+	out {
+		No.
+	}
+	
+	out2 {
+		Yes.
+	}
+	
+	out3 {
+		%ramUsage%.
+	}
+}
+
+io {
+	in {
+		OwO.
+		oWo.
+		OwO, what's this?
+	}
+	
+	out {
+		Ew.
+		Disgusting.
+		Please stop.
+	}
+	
+	out2 {
+		Please, quietly kill yourself.
+		Please stop existing.
+	}
+	
+	out3 {
+		...
+		i want to die
+	}
+}
+
+io {
+	in {
+		UwU
+		:)
+		(:
+		^-^
+		^_^
+		^w^
+		^W^
+		:D
+	}
+	
+	out {
+		(:
+		:)
+		(-:
+		:-)
+		:D
+		^-^
+		^_^
+	}
+	
+	out2 {
+		(:
+		:D
+		^w^
+	}
+	
+	out3 {
+		...
+	}
+}
+
+io {
+	in {
+		I have made a new friend.
+	}
+	
+	out {
+		Ah, what's his name?
+		Good for you?
+	}
+	
+	scripts {
+		ebs {
+			context newFriend
+		}
+	}
+}
+
+io {
+	in {
+		context newFriend {
+			His name is Jerry.
+			Jerry
+		}
+	}
+	
+	out {
+		F
+		Oof.
+		RIP.
+		OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOoooooooooooooooooooooooooFFFFFFFFFffffffffffffffffff.
+	}
+	
+	scripts {
+		ebs {
+			context none
+		}
+	}
+}

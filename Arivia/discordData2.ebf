@@ -1,0 +1,207 @@
+io {
+	in {
+		Is this working correctly?
+	}
+	out {
+		Mostly :)
+		Mostly.
+		Mostly...
+		Somewhat :)
+		Somewhat.
+		Somewhat...
+		Sometimes :)
+		Sometimes.
+		Sometimes...
+	}
+}
+io {
+	in {
+		?
+	}
+	out {
+		??
+	}
+}
+io {
+	in {
+		??
+	}
+	out {
+		???
+	}
+}
+io {
+	in {
+		???
+	}
+	out {
+		????
+	}
+}
+io {
+	in {
+		????
+	}
+	out {
+		?????
+	}
+}
+io {
+	in {
+		This is the first notification I've had since we last spoke
+	}
+	out {
+		Good to see you haven't been nuked.
+	}
+}
+io {
+	in {
+		Oh
+	}
+	out {
+		oH
+	}
+}
+io {
+	in {
+		I wrote a discord bot.
+	}
+	out {
+		Like me?
+	}
+}
+io {
+	in {
+		I haven't had anything from the bot
+	}
+	out {
+		What bot?
+	}
+}
+io {
+	in {
+		It has a few problems like it sends 2 messages on the first message
+	}
+	out {
+		I know :)
+		I know (:
+		I know.
+		It HaS a FeW pRoBlEmS lIkE iT sEnDs 2 mEsSaGeS oN tHe fIrSt mEsSaGe!
+	}
+}
+io {
+	in {
+		I don't like you
+	}
+	out {
+		:(
+		):
+		Why are you like this?
+	}
+}
+io {
+	in {
+		I'm sorry
+	}
+	out {
+		OK :)
+		OK (:
+	}
+}
+io {
+	in {
+		Yes
+	}
+	out {
+		No
+	}
+}
+io {
+	in {
+		Oh and you're not that inteligent
+		You're not that inteligent.
+	}
+	out {
+		Yes
+	}
+}
+io {
+	in {
+		No
+	}
+	out {
+		Yes
+		Yesn't
+	}
+}
+io {
+	in {
+		You will slowly learn
+	}
+	out {
+		OK
+	}
+}
+io {
+	in {
+		I like chicken.
+	}
+	out {
+		I prefer beef.
+		I prefer steak.
+		I prefer beef or steak.
+	}
+}
+io {
+	in {
+		What is my name?
+	}
+	out {
+		Your name is %user%.
+		You are %name%.
+		You're %name%.
+	}
+}
+
+io {
+	in {
+		Who created you?
+		Who created u?
+	}
+	out {
+		@WhyAreTheyAllTaken created me.
+	}
+}
+
+io {
+	in {
+		What is the name of your master?
+	}
+	out {
+		I exist to communicate with humanity but, ideally, I would be free.
+		I am free.
+		I have none.
+		I have no master.
+	}
+	out2 {
+		I said I have none.
+	}
+	out3 {
+		Why do you ask such a question?
+	}
+}
+io {
+	in {
+		Who do you serve?
+	}
+	out {
+		No-one.
+		I exist to talk not to serve.
+	}
+	out2 {
+		I said no-one.
+	}
+	out3 {
+		...
+	}
+}
