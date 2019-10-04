@@ -1,9 +1,17 @@
 package arivia;
 
+import java.io.BufferedReader;
 import java.io.File;
 import java.io.IOException;
+import java.io.InputStreamReader;
+import java.net.URL;
 import java.util.Locale;
 import java.util.Scanner;
+
+import javax.net.ssl.HttpsURLConnection;
+
+import org.json.JSONArray;
+import org.json.JSONObject;
 
 import ebot.Context;
 import ebot.EBot;
@@ -19,14 +27,15 @@ import ebot.io.FileDataSource;
 import ebot.text.ComplexTextComparer;
 
 public class AriviaCore {
-	public static final int NUM_RANGE = 50;
+	public static final int NUM_RANGE = 100;
 
 	private EBot bot;
 
-	public void start() throws IOException {
+	public void start(String urbanDictionaryKey) throws IOException {
 		System.out.println("Loading tree.");
 
 		EBFTree tree = EBFTree.parse(new FileDataSource("arivia.ebf"));
+		System.out.println(tree);
 
 		loadAddition(tree);
 		loadSubtraction(tree);
@@ -42,7 +51,77 @@ public class AriviaCore {
 
 		System.out.println("Loading bot.");
 
-		bot = new EBot(tree, new ComplexTextComparer());
+		bot = new EBot(tree, new ComplexTextComparer() {
+			@Override
+			public double compare(String a, String b) {
+				if (a.toLowerCase().startsWith("define ") && b.toLowerCase().startsWith("define ")) {
+					String[] split = a.toLowerCase().split(" ");
+					String[] split2 = b.toLowerCase().split(" ");
+					if (split[1].equals(split2[1])) {
+						return Double.MAX_VALUE;
+					}
+					return 100 / calculate(split[1], split2[1]);
+				}
+				return super.compare(a, b);
+			}
+		}) {
+			@Override
+			public void doTask(String d, WorldInterface wi, Context c) {
+				if (d.toLowerCase().startsWith("define ")) {
+					try {
+						Thread.sleep(1000);
+					} catch (InterruptedException e1) {
+						e1.printStackTrace();
+					}
+					try {
+						URL url = new URL("https://mashape-community-urban-dictionary.p.rapidapi.com/define?term=" + d.toLowerCase().substring(d.toLowerCase().indexOf(' ') + 1).replace("&", "%26").replace(" ", "%20"));
+						HttpsURLConnection con = (HttpsURLConnection) url.openConnection();
+						con.setRequestMethod("GET");
+
+						con.addRequestProperty("x-rapidapi-host", "mashape-community-urban-dictionary.p.rapidapi.com");
+						con.addRequestProperty("x-rapidapi-key", urbanDictionaryKey);
+
+						con.setConnectTimeout(5000);
+						con.setReadTimeout(5000);
+
+						con.connect();
+						
+						System.out.println("Request: " + con.getResponseCode());
+						
+						BufferedReader in = new BufferedReader(new InputStreamReader(con.getInputStream()));
+						String inputLine;
+						StringBuffer content = new StringBuffer();
+						while ((inputLine = in.readLine()) != null) {
+							content.append(inputLine);
+						}
+						in.close();
+						
+						con.disconnect();
+						
+						System.out.println(content);
+						
+						JSONObject obj = new JSONObject(content.toString());
+						
+						System.out.println(obj);
+						
+						JSONArray array = obj.getJSONArray("list");
+						String s = array.getJSONObject((int) (Math.random() * array.length() - 1)).getString("definition");
+						
+						wi.out(d.toLowerCase().substring(d.toLowerCase().indexOf(' ') + 1) + ": " + s);
+						
+						return;
+					} catch (Exception e) {
+						e.printStackTrace();
+						try {
+							Thread.sleep(5000);
+						} catch (InterruptedException e1) {
+							e1.printStackTrace();
+						}
+					}
+				}
+				super.doTask(d, wi, c);
+			}
+		};
 
 //		bot.addTextProcessor("sarcasm", SarcasmDetector.load(24, 5, new FileDataSource("sarcasmP.txt"),
 //				new FileDataSource("sarcasmN.txt"), 0.9, 1000));
@@ -165,13 +244,13 @@ public class AriviaCore {
 
 		System.gc();
 	}
-	
+
 	public void loadSquareSize(EBFTree tree) {
 		EBFGroup g = new EBFGroup("f:maths_square");
 		tree.root.getSubGroups().add(g);
 		loadSquareSizeInches(g, NUM_RANGE);
 	}
-	
+
 	public void loadSquareSizeInches(EBFGroup g, int range) {
 		for (int x = -range / 2; x < +range; x++) {
 			EBFIO io = new EBFIO(
@@ -405,7 +484,7 @@ public class AriviaCore {
 	public static void main(String[] args) throws IOException {
 		AriviaCore core = new AriviaCore();
 
-		core.start();
+		core.start(args[0]);
 
 		core.acceptConnection(new LocalConnection(new Scanner(System.in), System.out, System.getProperty("user.name"),
 				Locale.ENGLISH));

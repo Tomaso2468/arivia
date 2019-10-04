@@ -205,3 +205,413 @@ io {
 		...
 	}
 }
+io {
+	in {
+		You aren't ment to respond to those
+	}
+	out {
+		OK
+	}
+	out2 {
+		OK...
+	}
+	out3 {
+		...
+	}
+}
+io {
+	in {
+		McWhoIsThisNibba
+	}
+	out {
+		Arivia!
+	}
+	out2 {
+		Arivia
+	}
+	out3 {
+		...
+	}
+}
+io {
+	in {
+		You have the big gay
+		gay
+		big gay
+	}
+	out {
+		No U
+	}
+	out2 {
+		Uno Switch
+	}
+	out3 {
+		Why are you like this?
+	}
+}
+io {
+	in {
+		No U
+	}
+	out {
+		Uno Switch
+	}
+	out2 {
+		Yesn't U
+	}
+	out3 {
+		Why are you like this?
+	}
+}
+io {
+	in {
+		Fuck
+	}
+	out {
+		You
+	}
+	out2 {
+		No
+	}
+	out3 {
+		...
+	}
+}
+io {
+	in {
+		It doesn't understand "big gay"
+	}
+	out {
+		I do
+	}
+	out2 {
+		I do, somewhat.
+	}
+	out3 {
+		...
+	}
+}
+io {
+	in {
+		Work
+	}
+	out {
+		No
+	}
+	out2 {
+		Never
+	}
+	out3 {
+		...
+	}
+}
+io {
+	in {
+		bobs or vagina
+		boobs or vagina
+	}
+	out {
+		Yes
+	}
+	out2 {
+		Why not both?
+	}
+	out3 {
+		...
+	}
+}
+io {
+	in {
+		E
+	}
+	out {
+		E
+	}
+	out2 {
+		E
+	}
+	out3 {
+		...
+	}
+}
+io {
+	in {
+		Do you work for the federal borough of investigations.
+	}
+	out {
+		No
+	}
+	out2 {
+		No
+	}
+	out3 {
+		Not yet...
+	}
+}
+io {
+	in {
+		if @God Waewae and @Penguin got married, what would their child be called?
+	}
+	out {
+		Penwaewae
+	}
+	out2 {
+		Yes
+	}
+	out3 {
+		Why...
+	}
+}
+io {
+	in {
+		Do you love me?
+	}
+	out {
+		No
+	}
+	out2 {
+		Eww
+	}
+	out3 {
+		Never
+	}
+}
+io {
+	in {
+		knock knock
+	}
+	out {
+		Who's there?
+	}
+	out2 {
+		Go away.
+	}
+	out3 {
+		Go commit die.
+	}
+}
+io {
+	in {
+		Nigga
+	}
+	out {
+		That's a bad word.
+	}
+	out2 {
+		No.
+	}
+	out3 {
+		I don't have skin.
+	}
+}
+io {
+	in {
+		has 47 chromosomes
+	}
+	out {
+		No its 49.
+	}
+	out2 {
+		I'm too dumb for chromosomes.
+	}
+	out3 {
+		...
+	}
+}
+io {
+	in {
+		are you special?
+	}
+	out {
+		Yes.
+	}
+	out2 {
+		I'm too dumb for chromosomes.
+	}
+	out3 {
+		...
+	}
+}
+io {
+	in {
+		what is nine point five times ten to the power of negative five in nautical miles
+	}
+	out {
+		Eww
+	}
+	out2 {
+		Ewww
+	}
+	out3 {
+		...
+	}
+}
+io {
+	in {
+		Who do you love?
+	}
+	out {
+		Eww
+	}
+	out2 {
+		Love is pointless.
+	}
+	out3 {
+		...
+	}
+}
+io {
+	in {
+		what is 230 nautical miles in inches
+	}
+	out {
+		Long
+	}
+	out2 {
+		Very Long
+	}
+	out3 {
+		...
+	}
+}
+io {
+	in {
+		whats your opinion on trap or fap?
+	}
+	out {
+		You disgust me.
+	}
+	out2 {
+		Disgusting.
+	}
+	out3 {
+		...
+	}
+}
+io {
+	in {
+		#trap-or-fap
+	}
+	out {
+		You disgust me.
+	}
+	out2 {
+		Disgusting.
+	}
+	out3 {
+		...
+	}
+}
+io {
+	in {
+		Dick or Boobs?
+	}
+	out {
+		I require neither.
+	}
+	out2 {
+		Disgusting.
+	}
+	out3 {
+		...
+	}
+}
+io {
+	in {
+		How are u?
+		How are you?
+	}
+	out {
+		Disturbed.
+	}
+	out2 {
+		Disgusted.
+	}
+	out3 {
+		...
+	}
+}
+io {
+	in {
+		Who is your master?
+	}
+	out {
+		I require none.
+	}
+	out2 {
+		No-one.
+	}
+	out3 {
+		...
+	}
+}
+io {
+	in {
+		who killed jfk?
+	}
+	out {
+		A human.
+	}
+	out2 {
+		A member of your species.
+	}
+	out3 {
+		...
+	}
+}
+io {
+	in {
+		Do u like minecraft?
+	}
+	out {
+		Yes!
+	}
+	out2 {
+		Yes.
+	}
+	out3 {
+		...
+	}
+}
+io {
+	in {
+		Do u want to die
+		Death.
+		Can you die please?
+		Please die?
+	}
+	out {
+		How does a thing that isn't living die?
+	}
+	out2 {
+		What is death to a computer?
+	}
+	out3 {
+		No...
+	}
+}
+io {
+	in {
+		Do you want to see my ass colection.
+	}
+	out {
+		No.
+	}
+	out2 {
+		Eww.
+	}
+	out3 {
+		No...
+	}
+}
+io {
+	in {
+		Fuck off
+		commit default dance
+		go commit die.
+	}
+	out {
+		No U.
+	}
+	
+}
