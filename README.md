@@ -1,2 +1,2 @@
-# arivia
+# Arivia
 A chatbot.
