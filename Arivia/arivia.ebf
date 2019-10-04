@@ -18,13 +18,6 @@ ebf {
 	
 	text {
 		lang:en {
-			file {
-				discordData2.ebf
-			}
-			file {
-				discordData1.ebf
-			}
-			
 			io {
 				in {
 					Do you like tea?
@@ -143,7 +136,7 @@ ebf {
 			}
 			io {
 				in {
-					It’s nice to meet you
+					Itâ€™s nice to meet you
 					Pleased to meet you
 				}
 				
@@ -172,13 +165,13 @@ ebf {
 					Hey
 					Hey man
 					Hey girl
-					How’s it going?
+					Howâ€™s it going?
 					How are you doing?
-					What’s up?
-					What’s new?
-					What’s going on?
+					Whatâ€™s up?
+					Whatâ€™s new?
+					Whatâ€™s going on?
 					Long time no see
-					It’s been a while
+					Itâ€™s been a while
 					Good morning
 					Good afternoon
 					Good evening
