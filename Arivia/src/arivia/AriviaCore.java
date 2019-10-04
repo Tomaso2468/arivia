@@ -27,7 +27,7 @@ import ebot.io.FileDataSource;
 import ebot.text.ComplexTextComparer;
 
 public class AriviaCore {
-	public static final int NUM_RANGE = 100;
+	public static final int NUM_RANGE = 300;
 
 	private EBot bot;
 
@@ -162,6 +162,11 @@ public class AriviaCore {
 			public String getGroup() {
 				return "maths_addsub";
 			}
+			
+			@Override
+			public void onFilter(WorldInterface wi) {
+				wi.out("Calculating...");
+			}
 		});
 		bot.addFilter(new InputFilter() {
 			@Override
@@ -187,6 +192,11 @@ public class AriviaCore {
 			public String getGroup() {
 				return "maths_multiply";
 			}
+			
+			@Override
+			public void onFilter(WorldInterface wi) {
+				wi.out("Calculating...");
+			}
 		});
 		bot.addFilter(new InputFilter() {
 			@Override
@@ -209,6 +219,11 @@ public class AriviaCore {
 			public String getGroup() {
 				return "maths_divide";
 			}
+			
+			@Override
+			public void onFilter(WorldInterface wi) {
+				wi.out("Calculating...");
+			}
 		});
 		bot.addFilter(new InputFilter() {
 			@Override
@@ -230,6 +245,11 @@ public class AriviaCore {
 			@Override
 			public String getGroup() {
 				return "maths_square";
+			}
+			
+			@Override
+			public void onFilter(WorldInterface wi) {
+				wi.out("Calculating...");
 			}
 		});
 
