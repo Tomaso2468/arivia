@@ -68,6 +68,33 @@ public class AriviaCore {
 			@Override
 			public void doTask(String d, WorldInterface wi, Context c) {
 				System.out.println("Checking " + d.toLowerCase());
+				if (d.toLowerCase().contains("*")) {
+					System.out.println("Text contains multiply");
+					try {
+						if (d.toLowerCase().startsWith("what is")) {
+							d = d.toLowerCase().substring(7);
+						}
+						if (d.toLowerCase().startsWith("what's")) {
+							d = d.toLowerCase().substring(6);
+						}
+						if (d.toLowerCase().startsWith("whats")) {
+							d = d.toLowerCase().substring(5);
+						}
+						d = d.trim();
+						String[] numbers = d.split("\\*");
+						
+						double sum = 1;
+						
+						for (String n : numbers) {
+							sum *= Double.parseDouble(n.trim());
+						}
+						
+						wi.out("The total is " + sum);
+						return;
+					} catch (Throwable e) {
+						e.printStackTrace();
+					}
+				}
 				if (d.toLowerCase().contains("+")) {
 					System.out.println("Text contains add");
 					try {
