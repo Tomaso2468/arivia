@@ -4,6 +4,8 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.math.BigDecimal;
+import java.math.MathContext;
 import java.net.URL;
 import java.util.Locale;
 import java.util.Scanner;
@@ -65,6 +67,54 @@ public class AriviaCore {
 				return super.compare(a, b);
 			}
 		}) {
+			public String pow(BigDecimal n1, BigDecimal n2, WorldInterface wi) throws Exception {
+				BigDecimal result;
+				int signOf2 = n2.signum();
+			        // Perform X^(A+B)=X^A*X^B (B = remainder)
+			        double dn1 = n1.doubleValue();
+			        // Compare the same row of digits according to context
+			        if (!(n1.compareTo(new BigDecimal(dn1)) == 0)) throw new Exception("Cannot convert n1 to double"); // Cannot convert n1 to double
+			        n2 = n2.multiply(new BigDecimal(signOf2)); // n2 is now positive
+			        BigDecimal remainderOf2 = n2.remainder(BigDecimal.ONE);
+			        BigDecimal n2IntPart = n2.subtract(remainderOf2);
+			        // Calculate big part of the power using context -
+			        // bigger range and performance but lower accuracy
+			        BigDecimal intPow;
+			        try {
+			        	System.out.println("Int part: " + n2IntPart.intValueExact());
+			        	if (Math.abs(n2IntPart.intValueExact()) > 999999999) {
+			        		wi.out("That's a very big power. This might be really hard.");
+			        		return Math.pow(n1.doubleValue(), n2.doubleValue()) + "";
+			        	}
+			        	if (n2IntPart.intValueExact() < 0) {
+			        		System.out.println("Int part2: " +- n2IntPart.intValueExact());
+			        		intPow = BigDecimal.ONE.divide(n1.pow(-n2IntPart.intValueExact(), MathContext.UNLIMITED), MathContext.UNLIMITED);
+			        	} else {
+			        		intPow = n1.pow(n2IntPart.intValueExact(), MathContext.UNLIMITED);
+			        	}
+			        } catch (Exception e) {
+			        	System.out.println("Int part: " + n2IntPart.intValue());
+			        	wi.out("This looks hard I might not get it correct.");
+			        	if (Math.abs(n2IntPart.intValue()) > 999999999) {
+			        		wi.out("That's a very big power. This might be really hard.");
+			        		return Math.pow(n1.doubleValue(), n2.doubleValue()) + "";
+			        	}
+			        	if (n2IntPart.intValue() < 0) {
+			        		System.out.println("Int part2: " +- n2IntPart.intValue());
+			        		intPow = BigDecimal.ONE.divide(n1.pow(-n2IntPart.intValue(), MathContext.UNLIMITED), MathContext.UNLIMITED);
+			        	} else {
+			        		intPow = n1.pow(n2IntPart.intValue(), MathContext.UNLIMITED);
+			        	}
+			        }
+			        BigDecimal doublePow =
+			            new BigDecimal(Math.pow(dn1, remainderOf2.doubleValue()));
+			        result = intPow.multiply(doublePow);
+			    // Fix negative power
+			    if (signOf2 == -1)
+			        result = BigDecimal.ONE.divide(result, BigDecimal.ROUND_HALF_UP);
+			    
+			    return result.toPlainString();
+			}
 			@Override
 			public void doTask(String d, WorldInterface wi, Context c) {
 				System.out.println("Checking " + d.toLowerCase());
@@ -83,13 +133,24 @@ public class AriviaCore {
 						d = d.trim();
 						String[] numbers = d.split("\\*");
 						
-						double sum = 1;
+						BigDecimal sum = new BigDecimal("1");
 						
 						for (String n : numbers) {
-							sum *= Double.parseDouble(n.trim());
+							sum = sum.multiply(new BigDecimal(n.trim()));
 						}
 						
-						wi.out("The total is " + sum);
+						System.out.println(sum.toString());
+						if (sum.toPlainString().length() > (2000 - "The answer is ".length())) {
+							String output = "The answer is " + sum.toPlainString();
+							for (int i = 0; i < output.length(); i+=1000) {
+								int m = Math.min(i + 1000, output.length() - 1);
+								String s = (i > 0 ? ".." : "") + output.substring(i, m) + (m == output.length() - 1 ? "" : "...");
+								System.out.println(s);
+								wi.out(s);
+							}
+						} else {
+							wi.out("The answer is " + sum);
+						}
 						return;
 					} catch (Throwable e) {
 						e.printStackTrace();
@@ -110,13 +171,24 @@ public class AriviaCore {
 						d = d.trim();
 						String[] numbers = d.split("\\+");
 						
-						double sum = 0;
+						BigDecimal sum = new BigDecimal("0");
 						
 						for (String n : numbers) {
-							sum += Double.parseDouble(n.trim());
+							sum = sum.add(new BigDecimal(n.trim()));
 						}
 						
-						wi.out("The sum is " + sum);
+						System.out.println(sum);
+						if (sum.toPlainString().length() > (2000 - "The answer is ".length())) {
+							String output = "The answer is " + sum.toPlainString();
+							for (int i = 0; i < output.length(); i+=1000) {
+								int m = Math.min(i + 1000, output.length() - 1);
+								String s = (i > 0 ? ".." : "") + output.substring(i, m) + (m == output.length() - 1 ? "" : "...");
+								System.out.println(s);
+								wi.out(s);
+							}
+						} else {
+							wi.out("The answer is " + sum);
+						}
 						return;
 					} catch (Throwable e) {
 						e.printStackTrace();
@@ -137,9 +209,20 @@ public class AriviaCore {
 						d = d.trim();
 						String[] numbers = d.split("\\^");
 						
-						double sum = Math.pow(Double.parseDouble(numbers[0].trim()), Double.parseDouble(numbers[1].trim()));
 						
-						wi.out("The answer is " + sum);
+						String sum = pow(new BigDecimal(numbers[0].trim()), new BigDecimal(numbers[1].trim()), wi);
+						
+						if (sum.length() > (2000 - "The answer is ".length())) {
+							String output = "The answer is " + sum;;
+							for (int i = 0; i < output.length(); i+=1000) {
+								int m = Math.min(i + 1000, output.length() - 1);
+								String s = (i > 0 ? ".." : "") + output.substring(i, m) + (m == output.length() - 1 ? "" : "...");
+								System.out.println(s);
+								wi.out(s);
+							}
+						} else {
+							wi.out("The answer is " + sum);
+						}
 						return;
 					} catch (Throwable e) {
 						e.printStackTrace();
