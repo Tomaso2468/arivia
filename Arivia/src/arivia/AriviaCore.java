@@ -39,12 +39,12 @@ public class AriviaCore {
 		EBFTree tree = EBFTree.parse(new FileDataSource("arivia.ebf"));
 		System.out.println(tree);
 
-		loadAddition(tree);
-		loadSubtraction(tree);
-		loadMultiply(tree);
-		loadDivide(tree);
-		loadDefinitions(tree);
-		loadSquareSize(tree);
+//		loadAddition(tree);
+//		loadSubtraction(tree);
+//		loadMultiply(tree);
+//		loadDivide(tree);
+//		loadDefinitions(tree);
+//		loadSquareSize(tree);
 
 		System.out.println("Loading memory.");
 		if (new File("arivia.ebi").exists()) {
