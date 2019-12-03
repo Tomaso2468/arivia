@@ -9,4 +9,6 @@ public interface Connection {
 	public String getUserName();
 	public Locale getLocale();
 	public void prompt();
+	public boolean allowMaths();
+	public boolean allowBees();
 }

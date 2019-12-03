@@ -48,4 +48,14 @@ public class LocalConnection implements Connection {
 		ps.print("> ");
 	}
 
+	@Override
+	public boolean allowMaths() {
+		return true;
+	}
+
+	@Override
+	public boolean allowBees() {
+		return true;
+	}
+
 }
